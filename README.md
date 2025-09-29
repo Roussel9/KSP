@@ -4,6 +4,25 @@ Dies ist meine Implementierung der **Ninja Virtual Machine** im Rahmen der KSP-�
 Das Projekt umfasst die dynamische Verwaltung von **Stack** und **Heap** sowie die Anbindung der externen **BigInt-Bibliothek**.
 
 ---
+## Aufgabenstellung / Hintergrund
+
+Eine **virtuelle Maschine (VM)** ist ein Software-System, das Programme ausführt, die nicht direkt in Maschinencode geschrieben sind, sondern in einer **Zwischensprache** (hier: Ninja Bytecode).  
+Dadurch wird eine klare Trennung zwischen **Programm** und **Hardware** erreicht:
+
+- Programme laufen plattformunabhängig, solange eine VM existiert
+- Die VM übernimmt Verwaltung von Speicher (Stack, Heap), Arithmetik und Kontrollfluss
+- Erweiterungen (wie Garbage Collection oder BigInt-Support) können in der VM implementiert werden, ohne den Bytecode zu ändern
+
+### Konkret in dieser Übung:
+- Implementiere eine VM, die Ninja-Bytecode-Dateien (`.bin`) interpretieren kann.
+- Beim Start:
+  - **Stack** wird dynamisch mit `malloc()` angelegt  
+    - Größe wählbar mit `--stack n` (in KiB, Default = 64)
+  - **Heap** wird dynamisch mit `malloc()` angelegt  
+    - Größe wählbar mit `--heap n` (in KiB, Default = 8192)
+  - Der Heap wird in **zwei Hälften** geteilt, um später Garbage Collection zu ermöglichen.
+- Die VM führt das Programm aus, das in der `.bin`-Datei gespeichert ist, und verwaltet Objekte (primitive und zusammengesetzte).
+- Bei zu kleinem Heap:
 
 ## Features
 - Heap und Stack werden beim Programmstart dynamisch mit `malloc()` angelegt
