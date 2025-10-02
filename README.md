@@ -43,6 +43,6 @@ Dadurch wird eine klare Trennung zwischen **Programm** und **Hardware** erreicht
 
 ---
 ![Baum Screenshot](assets/ksp.png)arc
-![Architektur Screenshot](assets/.png)
+![Architektur Screenshot](assets/arc.png)
 
 
