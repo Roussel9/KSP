@@ -23,7 +23,13 @@ Dadurch wird eine klare Trennung zwischen **Programm** und **Hardware** erreicht
   - Der Heap wird in **zwei Hälften** geteilt, um später Garbage Collection zu ermöglichen.
 - Die VM führt das Programm aus, das in der `.bin`-Datei gespeichert ist, und verwaltet Objekte (primitive und zusammengesetzte).
 - Bei zu kleinem Heap:
+### Architekturübersicht
 
+- **Stack**: Dynamisch mit `malloc()` angelegt, speichert lokale Variablen und Rücksprungadressen.
+- **Heap**: Dynamisch mit `malloc()` angelegt, speichert Objekte und Arrays. Bei Überlauf wird ein Fehler ausgegeben.
+- **Register**: Enthält den Program Counter (PC), der die Adresse der nächsten auszuführenden Anweisung speichert.
+- **Program Counter (PC)**: Zeigt auf die aktuelle Ausführungsposition im Bytecode.
+- 
 ## Features
 - Heap und Stack werden beim Programmstart dynamisch mit `malloc()` angelegt
 - Größe von Heap und Stack kann über Kommandozeilenparameter angegeben werden:
@@ -36,5 +42,7 @@ Dadurch wird eine klare Trennung zwischen **Programm** und **Hardware** erreicht
 - Nutzung der BigInt-Bibliothek für arithmetische Operationen
 
 ---
+![Baum Screenshot](assets/ksp.png)arc
+![Architektur Screenshot](assets/.png)
 
 
